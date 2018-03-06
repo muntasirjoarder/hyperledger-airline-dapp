@@ -1,0 +1,30 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.conair.airline.participant
+
+/** Participant  */
+
+abstract participant ConairParticipant identified by participantKey {
+  o String participantKey
+  o Contact contact
+}
+
+concept Contact{
+  o String fName
+  o String lName
+  o String email
+}
+
+participant ConairNetworkAdmin extends ConairParticipant {
+
+}
+
+participant ConairPersonnel extends ConairParticipant{
+  o String department
+}
+
+participant B2BPartner extends ConairParticipant{
+
+}
