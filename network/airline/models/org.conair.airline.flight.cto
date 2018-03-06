@@ -1,0 +1,20 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.conair.airline.flight
+
+/** Flight */
+
+asset Flight identified by flightNumber {
+  o String flightNumber
+  o Route route
+  o String[] aliasFlightNumber
+}
+
+concept Route {
+  o String origin
+  o String destination
+  o String schedule
+}
+
