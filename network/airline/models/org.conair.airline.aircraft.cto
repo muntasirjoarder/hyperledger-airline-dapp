@@ -1,0 +1,8 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.conair.airline.aircraft
+
+/** Aircraft */
+
