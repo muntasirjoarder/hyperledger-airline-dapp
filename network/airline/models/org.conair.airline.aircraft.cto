@@ -6,3 +6,16 @@ namespace org.conair.airline.aircraft
 
 /** Aircraft */
 
+asset Aircraft identified by aircraftId {
+  o String aircraftId
+  o Ownership ownershipType default="LEASED"
+  o Integer firstClassSats
+  o Integer businessClassSeats
+  o Integer economyClassSeats
+  o String nickName optional
+}
+
+enum Ownership {
+  o LEASED
+  O OWNED
+}
