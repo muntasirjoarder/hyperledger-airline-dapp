@@ -3,6 +3,7 @@
  */
 
 namespace org.conair.airline.flight
+import org.conair.airline.aircraft.Aircraft
 
 /** Flight */
 
@@ -10,6 +11,7 @@ asset Flight identified by flightNumber {
   o String flightNumber
   o Route route
   o String[] aliasFlightNumber
+  --> Aircraft aircraft optional
 }
 
 concept Route {

@@ -17,5 +17,5 @@ asset Aircraft identified by aircraftId {
 
 enum Ownership {
   o LEASED
-  O OWNED
+  o OWNED
 }
