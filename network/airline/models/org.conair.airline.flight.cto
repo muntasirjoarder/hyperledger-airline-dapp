@@ -7,7 +7,8 @@ import org.conair.airline.aircraft.Aircraft
 
 /** Flight */
 
-asset Flight identified by flightNumber {
+asset Flight identified by flightId {
+  o String flightId regex=/[A-Z]{2}[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}/
   o String flightNumber
   o Route route
   o String[] aliasFlightNumber
