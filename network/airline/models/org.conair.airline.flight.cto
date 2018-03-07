@@ -15,8 +15,8 @@ asset Flight identified by flightNumber {
 }
 
 concept Route {
-  o String origin
-  o String destination
+  o String origin regex=/[A-Z][A-Z][A-Z]/
+  o String destination regex=/[A-Z][A-Z][A-Z]/
   o String schedule
 }
 
