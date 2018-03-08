@@ -21,3 +21,13 @@ concept Route {
   o String schedule
 }
 
+transaction createFlight {
+  o String flightNumber
+  o String origin
+  o String destination
+  o DateTime schedule
+}
+
+event flightCreated {
+  o String flightId
+}
