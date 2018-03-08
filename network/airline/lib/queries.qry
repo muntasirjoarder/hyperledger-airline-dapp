@@ -1,0 +1,32 @@
+// Return all flights
+query AllFlights {
+  description: "Return all flights in the registry"
+  statement:
+    SELECT org.conair.airline.flight.Flight
+}
+
+//Uses limit and skip
+query AllFlightsSkipLimit {
+  description: "Limits the number of flights returned"
+  statement:
+    SELECT org.conair.airline.flight.Flight
+       LIMIT _$limit
+        SKIP _$skip
+}
+
+//Select flights based on origin and destination
+query FlightOriginAndDestination {
+  description: "Returns all flights between origin and destination"
+  statement:
+    SELECT org.conair.airline.flight.Flight
+      where (route.origin == _$origin AND route.destination == _dest)
+}
+
+//select flights based on origin destination and specific time
+
+query FlightsOnOriginDestDates {
+  description: "Return flights on a specific date and time"
+  statement:
+    SELECT org.conair.airline.flight.flight
+      WHERE (route.origin == _$origin AND route.destination == dest AND route.schedule == _$date)
+}
