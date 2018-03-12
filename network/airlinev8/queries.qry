@@ -1,0 +1,49 @@
+// Returns all flights 
+query AllFlights {
+  description: "Returns all flights in the registry"
+  statement:  
+    SELECT  org.acme.airline.flight.Flight
+}
+
+// Uses the Limit and Skip
+query AllFlightsSkipLimit {
+  description: "Limits the number of flights returned"
+  statement:  
+    SELECT  org.acme.airline.flight.Flight
+      LIMIT  _$limit
+        SKIP   _$skip
+}
+
+// Selects flights based on the origin and destination
+query FlightsOriginAndDestination {
+  description: "Returns all flights in the registry"
+  statement:  
+    SELECT  org.acme.airline.flight.Flight
+      WHERE   (route.origin == _$origin_airport AND route.destination  == _$destination_airport )
+}
+
+// Selects flights based on the origin, destination & exact Schedule datetime (yep its not good :)
+query FlightsOnOriginDestinationDate {
+  description: "Returns all flights in the registry"
+  statement:  
+    SELECT  org.acme.airline.flight.Flight
+    WHERE (route.origin == _$origin_airport AND route.destination  == _$destination_airport AND route.schedule == _$date)
+}
+
+//Return all aircrafts
+query AllAircrafts {
+  description: "Returns all aircrafts"
+  statement:
+    SELECT org.acme.airline.aircraft.aircraft
+}
+
+
+//Return aircrafts with specific ownership
+query AircraftWithOwner {
+  description: "Return aircrafts with specific owner"
+  statement: 
+    SELECT org.acme.airline.aircraft.aircraft
+      WHERE ownershipType==_$ownership
+}
+
+
