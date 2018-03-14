@@ -56,6 +56,7 @@ rule AcmeParticipantPermissionHistorian {
 
 // #3.2 Needed for Creating the "CreateFlight" transaction
 // Only employees @ ACME can execute this transaction
+/****************
 rule ACMEPersonnelPermission {
   description: "only ACME personnel can create a flight"
   participant: "org.acme.airline.participant.ACMEPersonnel"
@@ -64,13 +65,13 @@ rule ACMEPersonnelPermission {
   transaction: "org.acme.airline.flight.CreateFlight"
   action: ALLOW
 }
-
+*********************/
 // This is an example of recursive access to the resource
 // This rule will work the same way as the one above but
 // It gives the transaction access to both Flight & Aircraft
 // To try it out simply UNCOMMENT statements below & COMMENT 
 // the rule above
-/****
+/*****************
 rule ACMEPersonnelPermission {
   description: "only ACME personnel can create a flight"
   participant: "org.acme.airline.participant.ACMEPersonnel"
@@ -79,7 +80,7 @@ rule ACMEPersonnelPermission {
   transaction: "org.acme.airline.flight.CreateFlight"
   action: ALLOW
 }
-****/
+***************/
 
 
 
@@ -92,7 +93,7 @@ rule ACMEPersonnelPermission {
 // ====================
 // UN-COMMENT the RULE below To Test
 // Comment the 'ACMEPersonnelPermission' rule above
-/**********************
+
 rule ACMEPersonnelPermission {
   description: "only ACME personnel can create a flight"
   participant(p): "org.acme.airline.participant.ACMEPersonnel"
@@ -102,4 +103,3 @@ rule ACMEPersonnelPermission {
   condition: (p.department=='Logistics')
   action: ALLOW
 }
-***************************/
